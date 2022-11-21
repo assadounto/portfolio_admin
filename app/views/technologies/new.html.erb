@@ -1,0 +1,14 @@
+<h1>New Technology</h1>
+
+<%= form_with model: @tech do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  <% @tech.errors.full_messages_for(:name).each do |message| %>
+    <div><%= message %></div>
+  <% end %>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+ 
+<h1>New Project</h1>
+
+<%= form_with model: @project do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+  <%= form.label :place %><br>
+  <%= form.text_field :place %>
+</div>
+<div>
+<%= form.label :title %><br>
+<%= form.text_field :title %>
+</div>
+<div>
+<%= form.label :description %><br>
+<%= form.text_area :description %>
+</div>
+<div>
+<%= form.label :livesource %><br>
+<%= form.text_field :livesource %>
+</div>
+<div>
+<%= form.label :sourcecode %><br>
+<%= form.text_field :sourcecode %>
+</div>
+<div>
+<%= form.label :cover %><br>
+<%= form.text_field :cover %>
+</div>
+<div>
+<%= form.label :thumb %><br>
+<%= form.text_field :thumb %>
+</div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
