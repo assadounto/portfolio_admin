@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :technologies
   resources :projects 
+  resources :project_technologies
   # Defines the root path route ("/")
   root to: "users#index"
 end

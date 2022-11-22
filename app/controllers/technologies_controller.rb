@@ -16,6 +16,13 @@ class TechnologiesController < ApplicationController
           render :new, status: :unprocessable_entity
         end
       end
+
+      def destroy
+        @tech = Technology.find(params[:id])
+      if @tech.destroy
+        redirect_to technologies_path
+      end
+    end
     
       private
         def tech_params

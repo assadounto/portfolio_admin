@@ -1,6 +1,9 @@
 <div class="side nav">
     <nav>
-        <ul>    
+        <ul>  
+       <% if @user.image.attached? %>
+        <image src="<%=url_for(@user.image)%>" alt="logo" width="100" height="100">
+        <%end%>
             <li><%= link_to "Dashboard", root_path %></li>
             <li><%= link_to "Add New Project", new_project_path %></li>
             <li><%= link_to "Add New Technology", new_technology_path %></li>
