@@ -41,7 +41,7 @@
 .api {
     margin: auto;
     border-radius: 5px;
-    width: 10%;
+    width: fit-content;
      padding: 0.5rem;
      background-color: blueviolet;
 }
