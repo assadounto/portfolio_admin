@@ -11,21 +11,16 @@
   </head>
 
   <body>
-  <% if notice %>
-  <p class="alert alert-success"><%= notice %></p>
-<% end %>
-<% if alert %>
-  <p class="alert alert-danger"><%= alert %></p>
-<% end %>
-<div class="main">
-<%if user_signed_in?%>
- <div class="side-nav">
-   <%=render "devise/shared/nav"%>
- </div>
+    <div class="main">
+       <%if user_signed_in?%>
+     <div class="side-nav">
+       <%=render "devise/shared/nav"%>
+     </div>
 <%end%>
  <div class="content">
     <%= yield %>
   </div>
   </div>
   </body>
+
 </html>

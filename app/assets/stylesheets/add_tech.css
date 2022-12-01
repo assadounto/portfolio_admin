@@ -29,3 +29,7 @@
     background-color: #F9D640;
     font-size: 1rem; 
 }
+
+#errorExplanation{
+    color:blue;
+}

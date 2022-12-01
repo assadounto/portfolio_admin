@@ -24,8 +24,9 @@
 
 .login-s {
     height: 30px;
-    background: #8e949a;
+    background: #5badfa;
     border-radius: 5px;
-    width: 50%;
+    width: fit-content;
     margin: auto;
+    color: rgba(0, 0, 0, 0.826);
 }
