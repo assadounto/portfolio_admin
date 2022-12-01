@@ -1,19 +1,21 @@
 class ProjectsController < ApplicationController
-
+    before_action :authenticate_user! , except: [:index,:show]
     def index
-        @project = Project.all
-        # render json: ProjectSerializer.new(@project).serializable_hash[:data][:attributes]
+        @projects = Project.all
     end
 
 
     def new
         @project = Project.new
     end
+
     def show 
         @project = Project.find(params[:id])
     end
+
     def create
         @project = Project.new(project_params)
+        return if current_user.role=="user"
         if @project.save
             redirect_to @project
         else
@@ -23,6 +25,7 @@ class ProjectsController < ApplicationController
  
     def destroy
         @project = Project.find(params[:id])
+        return if current_user.role=="user"
         if @project.destroy
             redirect_to projects_path   
         end
@@ -34,6 +37,7 @@ class ProjectsController < ApplicationController
 
      def update
         @project = Project.find(params[:id])
+        return if current_user.role=="user"
         if @project.update(project_params)
             redirect_to @project
         else

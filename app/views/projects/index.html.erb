@@ -1,11 +1,14 @@
-<% @project.each do |project|%>
-    <div class="project">
-        <h2><%=link_to project.name, project_path(project)%></h2>
-        <%= link_to "Edit", edit_project_path(project) %> 
-        <% if project.images.attached? %>
-            <% project.images.each do |image| %>
-                <image src="<%=url_for(image)%>" alt="logo" width="100" height="100">
-            <%end%>
+<button class="api"><%=link_to "View JSON","api/v1/projects" %></button>
+<div class="project-card-cont">
+<% @projects.each do |project|%>
+    <div class="project-link">
+      <%=link_to project_path(project) do %>
+       
+        <h2><%=project.name[0..20]%></h2>
         <%end%>
+        <%=link_to edit_project_path(project) do %>
+        <div class="span">Edit</div>
+        <%end%>
+     </div>
 <%end%>
-    </div>
+</div>

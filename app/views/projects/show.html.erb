@@ -1,25 +1,36 @@
+<button class="api"><%=link_to "View JSON",api_v1_project_path(@project) %></button>
 <div class="project-show-cont">
-<div class="info">
-   <h1><%=@project.name%></h1>
-   <p> <%=@project.description%></p>
-    <p><%=@project.place%></p>
-    <h2><%=@project.title%></h2>
-    <div class="links">
-    <%=link_to "Live source" , @project.livesource , target: '_blank'%>
-     <%=link_to "source code" , @project.sourcecode , target: '_blank'%>
-    </div>
-  
+  <div class="info-cont">
+     <h1><%=@project.name%></h1>
+     <h2><%=@project.title%></h2>
+     <p> <%=@project.description%></p>
+     <p><%=@project.place%></p>
+  </div>
+  <div class="links-cont">
+    <div><%=link_to "Live Source" , @project.livesource , target: '_blank'%></div>
+    <div><%=link_to "Source Code" , @project.sourcecode , target: '_blank'%></div>
+    <div><%= button_to  "Delete Project ", project_path(@project), method: :delete %></div>
+    <div><%= link_to "Edit Project", edit_project_path(@project) %></div>
+  </div>
+  <div class='img-cont'>
     <% if @project.images.attached? %>
     <% @project.images.each do |image| %>
-        <image src="<%=url_for(image)%>" alt="logo" width="100" height="100">
-    <%end%>
-<%end%>
-    <%@project.technologies.each do |technology|%>
-            <p><%=technology.name%></p> 
-            <%=link_to "Edit", edit_technology_path(technology)%>
-            <%=button_to "Delete",project_technology_path(@project.id), method: :delete%>
-    <%end%>
+        <image src="<%=url_for(image)%>" alt="logo"  class="images">
+       <%end%>
+     <%end%>
+    </div>
+    <div class='project-tech-cont'>
+    <h3>Technologies</h3>
+    <div class='tech-cont'>  
+       <%@project.technologies.each do |technology|%>
+        <div class="tech">    
+              <div><%=technology.name%></div> 
+              <div class="btn"><%=button_to "X",project_technology_path(@project.id), method: :delete%></div>
+        </div>
+        <%end%>
+        </div>
+    </div>
 </div>
 
-<div><%= button_to  "delete Project ", project_path(@project), method: :delete %></div>
+
 

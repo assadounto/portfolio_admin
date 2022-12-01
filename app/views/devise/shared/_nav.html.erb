@@ -1,0 +1,22 @@
+
+    <nav>
+    <h4><%=@user.name%><h4>
+        <ul>  
+       <% if @user.image.attached? %>
+           <image src="<%=url_for(@user.image)%>" alt="logo" width="100" height="100">
+        <%end%>
+            <li><%= link_to "Projects", projects_path, class: ["", ("active" if request.path == projects_path )]%></li>
+            <li><%= link_to "Add New Project", new_project_path ,class: ["", ("active" if request.path == new_project_path)]%></li>
+            <li><%= link_to "Add New Technology", new_technology_path ,class: ["", ("active" if request.path == new_technology_path )]%></li>
+            <li><%=link_to "Profile" ,edit_user_registration_path,class: ["", ("active" if request.path == edit_user_registration_path )]%> </li>
+            <% if user_signed_in? %>
+            <%= link_to "Sign Out", destroy_user_session_path, data: { turbo_method: :delete } %>
+            <%end%>
+        </ul>
+        <div class="message"> 
+        <% if @user.role=="user"%>
+        <h4>As a Guest you can only view. No edits and creates. Thanks for understanding</h4>
+        <%end%>
+        </div>
+    </nav>
+ 

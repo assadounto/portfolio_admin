@@ -1,0 +1,56 @@
+.project-card-cont {
+    width: 80%;
+    margin: 4rem auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   background: inherit;
+   
+}
+
+.project-card-cont > div {
+    background-color: inherit;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid #5badfa;
+    box-shadow:4px 4px #5badfa ;
+   
+}
+
+.project-card-cont a {
+    text-decoration: none;
+}
+
+.span {
+    text-align: center;
+    background-color:#5badfa;
+   border-radius: 5px;
+   height: 2rem;
+   padding: 0.5rem;
+}
+.project-link h2{
+    background-color: gray;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 6px;
+   height: 5rem;
+   overflow-wrap: break-word;
+   background-color:#5badfa;
+}
+
+.api {
+    margin: auto;
+    border-radius: 5px;
+    width: 10%;
+     padding: 0.5rem;
+     background-color: blueviolet;
+}
+
+.api a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    background-color: white,!important;
+}

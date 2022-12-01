@@ -1,14 +1,19 @@
+<div class= "add-tech">
 <h1>New Technology</h1>
 
 <%= form_with model: @tech do |form| %>
   <div>
     <%= form.label :name %><br>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, :class=>"field"%>
   </div>
   <% @tech.errors.full_messages_for(:name).each do |message| %>
     <div><%= message %></div>
   <% end %>
   <div>
-    <%= form.submit %>
+    <%= form.submit :class=>"tech-submit" %>
+
+    
+
   </div>
 <% end %>
+</div>

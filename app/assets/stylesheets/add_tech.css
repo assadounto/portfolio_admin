@@ -1,0 +1,31 @@
+.add-tech {
+    width: 80%;
+    margin: auto;
+    height: 60vh;
+    margin-top: 7rem;
+    border-radius: 10px;
+    background-color: aliceblue;
+ padding: 1rem;
+}
+
+.add-tech h1 ,.add-tech div{
+    text-align: center;
+    margin-bottom: 2rem;
+   
+}
+
+.field {
+ border-radius: 5px;
+ border: 2px solid black;
+ height: 30px;
+}
+
+.tech-submit {
+    border: 2px solid black;
+    width: fit-content;
+    border-radius: 5px;
+    height: 2rem;
+    cursor: pointer;
+    background-color: #F9D640;
+    font-size: 1rem; 
+}

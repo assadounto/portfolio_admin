@@ -1,4 +1,6 @@
 class TechnologiesController < ApplicationController
+  before_action :authenticate_user!
+
     def index
         @tech = Technology.all
       end
@@ -9,7 +11,7 @@ class TechnologiesController < ApplicationController
     
       def create
         @tech = Technology.new(tech_params)
-    
+         return if current_user.role=="user"
         if @tech.save
           redirect_to @tech
         else
@@ -19,6 +21,7 @@ class TechnologiesController < ApplicationController
 
       def destroy
         @tech = Technology.find(params[:id])
+        return if current_user.role=="user"
       if @tech.destroy
         redirect_to technologies_path
       end

@@ -1,40 +1,48 @@
- 
-<h1>Edit Project</h1>
+<div class="new-cont">
+<h1>Edit</h1>
 
 <%= form_with model: @project do |form| %>
-  <div>
-    <%= form.label :name %><br>
-    <%= form.text_field :name %>
+  <div class="a">
+    <%= form.label :name ,:class=>"label" %><br>
+    <%= form.text_field :name,:class=>"area" %>
   </div>
-  <div>
-  <%= form.label :place %><br>
-  <%= form.text_field :place %>
+  <div class="a">
+  <%= form.label :place, :class=>"label" %><br>
+  <%= form.text_field :place,:class=>"area" %>
 </div>
-<div>
-<%= form.label :title %><br>
-<%= form.text_field :title %>
+<div class="a">
+<%= form.label :title, :class=>"label" %><br>
+<%= form.text_field :title,:class=>"area" %>
 </div>
-<div>
-<%= form.label :description %><br>
-<%= form.text_area :description %>
+<div class="a">
+<%= form.label :description ,:class=>"label " %><br>
+<%= form.text_area :description,:class=>"area desc" %>
 </div>
-<div>
-<%= form.label :livesource %><br>
-<%= form.text_field :livesource %>
+<div class="a">
+<%= form.label :livesource ,:class=>"label"%><br>
+<%= form.text_field :livesource,:class=>"area" %>
 </div>
-<div>
-<%= form.label :sourcecode %><br>
-<%= form.text_field :sourcecode %>
+<div class="a">
+<%= form.label :sourcecode,:class=>"label"%><br>
+<%= form.text_field :sourcecode,:class=>"area" %>
+</div>
+<div class="a">
+<%=form.label "Profile image" ,:class=>"label m2"%>
+<div class="img-upload  p3"><%=form.file_field :images , multiple: true,:class=>""%></div>
+</div>
+<div class="tech-a" >
+<div class="label m2"><%=form.label "Add Technologies" ,:class=>"" %></div>
+<div class="tech-list">
+ <%= form.collection_check_boxes:technology_ids, Technology.all, :id, :name,{mutliple: true} ,:class=>"" do |b|%>
+  <%=b.label(class: ""){b.check_box + b.text}%>
+ 
+<%end%>
+</div>
 </div>
 
-<%=form.label "Profile image"%>
-<%=form.file_field :images , multiple: true%>
-<div>
-<%= form.label :thumb %><br>
-<%= form.text_field :thumb %>
- <%= form.collection_check_boxes :technology_ids, Technology.all, :id, :name ,multiple: true%>
-</div>
-  <div>
-    <%= form.submit %>
+  <div class="a">
+    <%= form.submit :class=>"submit"%>
   </div>
+  
 <% end %>
+</div>
