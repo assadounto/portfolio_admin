@@ -6,8 +6,8 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
   
-  config.action_mailer.default_url_options= { host: 'https://rails-oo94.onrender.com',only_path: true }
-
+  config.action_mailer.default_url_options= { host: 'rails-oo94.onrender.com', only_path: true }
+   host = 'rails-oo94.onrender.com' 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.

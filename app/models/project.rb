@@ -7,6 +7,6 @@ class Project < ApplicationRecord
     validates :name, uniqueness: true
 
     def photos
-        images.map{|p| Rails.application.routes.url_helpers.url_for(p, only_path: true) }
+        images.map{|p| Rails.application.routes.url_helpers.url_for(p) }
     end
 end
