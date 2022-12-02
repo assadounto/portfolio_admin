@@ -10,11 +10,10 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-  config.action_mailer.default_url_options = { host: 'localhost:3000' }
-  # Show full error reports.
+  
   config.consider_all_requests_local = true
-  host = 'localhost' #←先ほどの上のコードのhost名と合わせる
-  Rails.application.routes.default_url_options[:host] = host
+   #←先ほどの上のコードのhost名と合わせる
+ # Rails.application.routes.default_url_options[:host] = host
   # Enable server timing
   config.server_timing = true
 
