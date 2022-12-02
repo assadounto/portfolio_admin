@@ -75,3 +75,5 @@ gem "devise", "~> 4.8"
 
 gem "jsonapi-serializer", "~> 2.2"
 gem 'active_link_to'
+gem 'cloudinary'
+gem "ffi"

@@ -1,0 +1,18 @@
+development:
+  cloud_name: "dtkrbnouo"
+  api_key: '553487984243188'
+  api_secret: "EMm3WJg8jyK--KtvVVwvvY0yJUc"
+  enhance_image_tag: true
+  static_file_support: false
+production:
+ cloud_name: "dtkrbnouo"
+  api_key: '553487984243188'
+  api_secret: "EMm3WJg8jyK--KtvVVwvvY0yJUc"
+  enhance_image_tag: true
+  static_file_support: false
+test:
+  cloud_name: "dtkrbnouo"
+  api_key: '553487984243188'
+  api_secret: "EMm3WJg8jyK--KtvVVwvvY0yJUc"
+  enhance_image_tag: true
+  static_file_support: false
