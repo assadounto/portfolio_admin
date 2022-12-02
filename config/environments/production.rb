@@ -6,7 +6,8 @@ Rails.application.configure do
   # Code is not reloaded between requests.
   config.cache_classes = true
   
-
+  config.action_mailer.default_url_options= { host: 'rails-oo94.onrender.com', only_path: true }
+   host = 'rails-oo94.onrender.com' 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both threaded web servers
   # and those relying on copy on write to perform better.
@@ -30,7 +31,7 @@ Rails.application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
-  config.routes.default_url_options[:host] = 'rails-oo94.onrender.com'
+  config.default_url_options[:host] = 'rails-oo94.onrender.com'
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 
